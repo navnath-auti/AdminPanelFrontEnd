@@ -18,7 +18,7 @@ function Routes1() {
         {" "}
         {/* Wrap your routes with the Layout component */}
         <Routes>
-          <Route exact path="/" component={HomePage} />
+          <Route path="/" element={<HomePage />} exact />
           <Route path="/create" element={<ProductForm />} exact />
           <Route path="/products" element={<ProductList />} exact />
           {/* <Route path="/orders" component={OrderHistory} /> */}
