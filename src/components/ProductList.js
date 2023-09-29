@@ -19,6 +19,22 @@ function ProductList() {
     fetchProducts();
   }, []);
 
+  const deleteProduct = async (skuToDelete) => {
+    try {
+      // Make a DELETE request to the delete API endpoint with the SKU as a parameter
+      await axios.delete(
+        `http://localhost:5000/api/products/delete/${skuToDelete}`
+      );
+
+      // Remove the deleted product from the state
+      setProducts((prevProducts) =>
+        prevProducts.filter((product) => product.SKU !== skuToDelete)
+      );
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
+
   return (
     <div>
       <h1>Product List</h1>
@@ -43,6 +59,7 @@ function ProductList() {
                 />
               ))}
             </div>
+            <button onClick={() => deleteProduct(product.SKU)}>Delete</button>
           </li>
         ))}
       </ul>
