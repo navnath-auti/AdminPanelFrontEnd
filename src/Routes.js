@@ -20,8 +20,6 @@ function Routes1() {
         <Routes>
           <Route exact path="/" component={HomePage} />
           <Route path="/create" element={<ProductForm />} exact />
-          {/* <Route path="/create" component={ProductForm} /> */}
-          {/* <Route path="/products" component={ProductList} /> */}
           <Route path="/products" element={<ProductList />} exact />
           {/* <Route path="/orders" component={OrderHistory} /> */}
           {/* Add other routes as needed */}
