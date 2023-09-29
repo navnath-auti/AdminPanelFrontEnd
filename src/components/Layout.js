@@ -6,6 +6,7 @@ function Layout({ children }) {
     <div>
       <NavigationBar /> {/* Include the NavigationBar component */}
       <main>{children}</main>
+      <footer>Footer content</footer> {/* Include a footer */}
       {/* Additional layout content */}
     </div>
   );
