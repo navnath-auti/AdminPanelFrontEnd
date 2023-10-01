@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function ProductList() {
@@ -59,6 +60,9 @@ function ProductList() {
                 />
               ))}
             </div>
+            <Link to={`/edit/${product.SKU}`} className="edit-link">
+              Edit
+            </Link>
             <button onClick={() => deleteProduct(product.SKU)}>Delete</button>
           </li>
         ))}
